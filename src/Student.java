@@ -1,10 +1,10 @@
 public class Student {
-    int rating;
+    private int rating;
     private String name;
     static int countOfStudent;
-    static int summaryRating;
+    static double summaryRating;
 
-    // TODO implement Student class according to the instructions providede in the README.md file
+    // TODO implement Student class according to the instructions providede in the README.md file - done
 
     public Student(String name) {
         this.name = name;
@@ -12,8 +12,11 @@ public class Student {
     }
 
     public static double getAvgRating() {
-        // TODO return average rating of all students
-        return 0;
+        // TODO return average rating of all students - done
+        if (countOfStudent > 0){
+            return summaryRating / countOfStudent;
+        }
+        else return 0;
     }
 
     public String getName() {
@@ -21,7 +24,7 @@ public class Student {
     }
 
     public void setName(String name) {
-        this.name = name; // TODO set student's name
+        this.name = name; // TODO set student's name - done
     }
 
     public int getRating() {
@@ -30,21 +33,26 @@ public class Student {
 
     public void setRating(int rating) {
         this.rating = rating;
-        summaryRating = summaryRating + rating;
-        // TODO initialize rating;
+        summaryRating = summaryRating + this.rating;
+        // TODO initialize rating; - done
     }
 
     public boolean betterStudent(Student student) {
-        // TODO return the result of comparing this.student's rating with student's rating
-        return false;
+        if (this.rating > student.rating) {
+          return true;
+        }
+        // TODO return the result of comparing this.student's rating with student's rating - done
+        else return false;
     }
 
     public void changeRating(int rating) {
+        this.rating = rating;
         // TODO change this student's rating and average raiting of all students
     }
 
     public static void removeStudent(Student student) {
-        // TODO remove student = count - rating from allRating
+        summaryRating = (summaryRating - student.rating);
+        // TODO remove student = count - rating from summaryRating
     }
 
     @Override

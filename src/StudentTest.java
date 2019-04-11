@@ -13,6 +13,7 @@ public class StudentTest {
     public void testGetAvgRating() {
 
         assertEquals(Student.getAvgRating(), 0.0d, "Average rating is wrong");
+
         System.out.println(Student.countOfStudent);
         Student student1 = new Student("Petro");
         student1.setRating(15);
@@ -99,11 +100,13 @@ public class StudentTest {
 
         assertTrue(student3.betterStudent(student4),
                 student1 + " is not better than " + student2);
+
     }
 
     @Test
     public void testChangeRating() {
-
+        System.out.println(Student.countOfStudent);
+        System.out.println(Student.summaryRating);
         assertEquals(Student.getAvgRating(), 0.0d, "Average rating is wrong");
 
         Student student1 = new Student("Petro");
