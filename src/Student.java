@@ -37,6 +37,7 @@ public class Student {
         // TODO initialize rating; - done
     }
 
+
     public boolean betterStudent(Student student) {
         if (this.rating > student.rating) {
           return true;
@@ -46,18 +47,22 @@ public class Student {
     }
 
     public void changeRating(int rating) {
-        this.rating = rating;
+        double a = getRating();
+        summaryRating = summaryRating - a;
+        this.setRating(rating);
         // TODO change this student's rating and average raiting of all students
     }
 
     public static void removeStudent(Student student) {
-        summaryRating = (summaryRating - student.rating);
         // TODO remove student = count - rating from summaryRating
+        countOfStudent--;
+        student.summaryRating = student.summaryRating - student.rating;
+        getAvgRating();
     }
 
     @Override
     public String toString() {
         // TODO return String with name and rating of this student
-        return "";
+        return "name and rating: " + getName() + getRating();
     }
 }
