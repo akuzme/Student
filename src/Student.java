@@ -4,7 +4,7 @@ public class Student {
     static int countOfStudent;
     static double summaryRating;
 
-    // TODO implement Student class according to the instructions providede in the README.md file - done
+    // TODO implement Student class according to the instructions providede in the README.md file
 
     public Student(String name) {
         this.name = name;
@@ -12,11 +12,10 @@ public class Student {
     }
 
     public static double getAvgRating() {
-        // TODO return average rating of all students - done
-        if (countOfStudent > 0){
+        // TODO return average rating of all students
+        if (countOfStudent > 0) {
             return summaryRating / countOfStudent;
-        }
-        else return 0;
+        } else return 0;
     }
 
     public String getName() {
@@ -24,7 +23,8 @@ public class Student {
     }
 
     public void setName(String name) {
-        this.name = name; // TODO set student's name - done
+        // TODO set student's name
+        this.name = name;
     }
 
     public int getRating() {
@@ -32,31 +32,28 @@ public class Student {
     }
 
     public void setRating(int rating) {
+        // TODO initialize rating
         this.rating = rating;
         summaryRating = summaryRating + this.rating;
-        // TODO initialize rating; - done
     }
 
 
     public boolean betterStudent(Student student) {
-        if (this.rating > student.rating) {
-          return true;
-        }
-        // TODO return the result of comparing this.student's rating with student's rating - done
-        else return false;
+        // TODO return the result of comparing this.student's rating with student's rating
+        return this.rating > student.rating;
     }
 
     public void changeRating(int rating) {
+        // TODO change this student's rating and average raiting of all students
         double a = getRating();
         summaryRating = summaryRating - a;
         this.setRating(rating);
-        // TODO change this student's rating and average raiting of all students
     }
 
     public static void removeStudent(Student student) {
         // TODO remove student = count - rating from summaryRating
         countOfStudent--;
-        student.summaryRating = student.summaryRating - student.rating;
+        summaryRating = summaryRating - student.rating;
         getAvgRating();
     }
 
