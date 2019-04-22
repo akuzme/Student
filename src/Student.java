@@ -40,7 +40,8 @@ public class Student {
 
     public boolean betterStudent(Student student) {
         // TODO return the result of comparing this.student's rating with student's rating
-        return this.rating > student.rating;
+        return getRating() > student.getRating();
+        //return this.rating > student.rating;
     }
 
     public void changeRating(int rating) {
